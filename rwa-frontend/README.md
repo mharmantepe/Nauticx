@@ -1,14 +1,20 @@
-# RWA Investor Frontend
+# 🛥️ NauticX - Yacht Investment Marketplace
 
-A professional Next.js application for investing in Real World Asset (RWA) tokens on the Stellar blockchain. This platform enables investors to access tokenized real estate, commodities, and other physical assets through compliant blockchain technology.
+NauticX is a revolutionary platform that tokenizes luxury yachts, marina berths, and charter revenues, making yacht investment accessible to global investors while providing liquidity solutions for yacht owners.
 
-## 🎯 Features
+## 🎯 Vision
 
-### **Core Functionality (Phase 1 - Completed)**
-- ✅ **Wallet Integration**: Real Freighter wallet connection with network detection
-- ✅ **Professional Dashboard**: Portfolio overview with asset statistics  
-- ✅ **Token Transfer**: Secure RWA token transfers with compliance validation
-- ✅ **Compliance Tracking**: KYC and whitelist status monitoring
+Transform the luxury yacht and maritime industry by creating a transparent, efficient, and accessible marketplace for fractional yacht ownership and investment opportunities.
+
+## 🌟 Key Features
+
+### **Core Functionality**
+- ✅ **Yacht Tokenization**: Convert yacht ownership into digital shares
+- ✅ **Marina Berth Rights**: Invest in premium marina spots
+- ✅ **Charter Income**: Participate in yacht charter revenues
+- ✅ **Refit Projects**: Fund yacht renovation and improvement projects
+- ✅ **Marketplace**: Global platform for yacht investment opportunities
+- ✅ **Portfolio Management**: Track your yacht investments and returns
 - ✅ **Smart Contract Integration**: Mock contract client ready for production
 - ✅ **Real-time Updates**: Automatic wallet state monitoring and updates
 
@@ -46,143 +52,81 @@ npm run build
 npm start
 ```
 
-## 🏗️ Project Architecture
+## 🏗️ Project Structure
 
-### **Directory Structure**
 ```
 rwa-frontend/
-├── app/                    # Next.js App Router
-│   ├── page.tsx           # Main dashboard  
-│   ├── transfer/          # Token transfer page
-│   ├── layout.tsx         # Root layout
-│   └── globals.css        # Global styles
-├── components/
-│   ├── ui/                # shadcn/ui components
-│   └── layout/            # Layout components (Header)
-├── lib/
-│   ├── types.ts           # TypeScript definitions
-│   ├── stellar.ts         # Stellar SDK utilities
-│   ├── contract.ts        # Smart contract client
-│   └── utils.ts           # Helper functions
-├── stores/
-│   ├── wallet.ts          # Wallet state (Zustand)
-│   └── contract.ts        # Contract state (Zustand)
-└── public/                # Static assets
+├── app/                    # Next.js app directory
+│   ├── dashboard/         # Yacht portfolio dashboard
+│   ├── marketplace/       # Yacht listings
+│   ├── tokenize/         # Yacht tokenization flow
+│   └── transfer/         # Share transfer system
+├── components/            # Reusable UI components
+├── lib/                   # Core utilities
+└── stores/               # State management
 ```
 
-### **Smart Contract Integration**
+## 📱 Main Features
 
-**Contract ID**: `CBQAAC4EHNMMHEI2W3QU6UQ5N4KSVYRLVTB5M2XMARCNS4CNLWMX3VQ6`
-**Network**: Stellar Testnet
-**Asset**: Luxury Apartment NYC (LAPT) - Premium Manhattan real estate token
+### Dashboard
+- Portfolio value tracking
+- Active yacht investments
+- Charter revenue monitoring
+- Regulatory compliance status
+- Quick access to key actions
 
-**Supported Operations**:
-- ✅ Balance queries
-- ✅ Asset metadata retrieval  
-- ✅ Compliance status checking
-- ✅ Token transfers (with validation)
-- ✅ Whitelist verification
-- 🔄 Admin functions (minting, pausing)
+### Marketplace
+- Advanced yacht search with filters:
+  - Yacht type (Motor, Sailing, Super)
+  - Location (Monaco, Bodrum, Cannes, Miami)
+  - Price range
+  - Certification (RINA, MCA, CE, ISO)
+- Detailed yacht listings
+- Investment progress tracking
+- Real-time availability updates
 
-### **State Management**
+### Tokenization Process
+1. **Yacht Details**
+   - Basic information
+   - Location data
+   - Ownership history
+   
+2. **Technical Specifications**
+   - Yacht dimensions
+   - Engine details
+   - Cabin configuration
+   - Equipment inventory
+   
+3. **Documentation**
+   - Ownership certificates
+   - Regulatory compliance
+   - Insurance documents
+   
+4. **Investment Structure**
+   - Token economics
+   - Revenue sharing model
+   - Maintenance provisions
+   
+5. **Market Listing**
+   - Final verification
+   - Publication settings
+   - Marketing details
 
-**Wallet Store** (`stores/wallet.ts`):
-- Connection status and user address
-- Network selection (testnet/mainnet)
-- XLM balance tracking
-- Connection management
+### Share Transfer
+- Secure ownership transfer
+- KYC/AML verification
+- Transaction tracking
+- Compliance validation
 
-**Contract Store** (`stores/contract.ts`):
-- Asset metadata and total supply
-- User token balance and compliance status
-- Transaction handling
-- Error and loading states
+## 🔒 Security Features
 
-## 🎨 Design System
+- Stellar blockchain integration
+- KYC/AML compliance checks
+- Secure wallet connection
+- Transaction verification
+- Document authenticity validation
 
-### **Color Palette**
-- **Primary**: Deep blue (#1e40af) for professional finance look
-- **Secondary**: Light gray-blue for backgrounds
-- **Success**: Green for positive actions and status
-- **Warning**: Amber for alerts and pending states
-- **Error**: Red for validation and error states
-
-### **Typography**
-- **Body**: System fonts (Inter equivalent) for readability
-- **Monospace**: For addresses, hashes, and numerical data
-- **Hierarchy**: Clear sizing scale for financial data
-
-### **Components**
-- **Cards**: Clean borders with subtle shadows
-- **Buttons**: Consistent sizing with proper loading states  
-- **Forms**: Comprehensive validation with error messages
-- **Badges**: Status indicators for compliance and asset types
-- **Alerts**: Contextual information and warnings
-
-## 🔧 Configuration
-
-### **Environment Variables**
-```env
-# Optional - defaults are set in code
-NEXT_PUBLIC_STELLAR_NETWORK=testnet
-NEXT_PUBLIC_CONTRACT_ID=CBQAAC4EHNMMHEI2W3QU6UQ5N4KSVYRLVTB5M2XMARCNS4CNLWMX3VQ6
-```
-
-### **Network Configuration**
-```typescript
-// lib/stellar.ts
-export const NETWORKS = {
-  testnet: {
-    networkPassphrase: Networks.TESTNET,
-    horizonUrl: 'https://horizon-testnet.stellar.org',
-    sorobanUrl: 'https://soroban-testnet.stellar.org',
-    explorerUrl: 'https://stellar.expert/explorer/testnet'
-  },
-  mainnet: { /* ... */ }
-};
-```
-
-## 💼 Investment Features
-
-### **Dashboard Overview**
-- **Portfolio Value**: Real-time token holdings and USD equivalent
-- **Compliance Status**: KYC verification and whitelist status  
-- **Yield Information**: Projected annual returns and distribution timeline
-- **Quick Actions**: Transfer, marketplace, and tokenization links
-
-### **Transfer Interface** 
-- **Address Validation**: Real-time Stellar address format checking
-- **Compliance Verification**: Recipient whitelist and KYC validation
-- **Amount Controls**: Max button and balance validation
-- **Transaction Preview**: Fee estimation and confirmation details
-- **Security**: Multiple validation layers before execution
-
-### **Asset Information**
-- **Metadata Display**: Name, description, and asset type
-- **Valuation Tracking**: Current value and last update timestamp
-- **Ownership Percentage**: User's share of total asset
-- **Legal Documentation**: Hash verification for property deeds
-
-## 🔐 Security & Compliance
-
-### **Wallet Security**
-- **Non-custodial**: Users maintain control of private keys
-- **Session Management**: Automatic connection checking
-- **Network Validation**: Testnet/mainnet switching with confirmation
-
-### **Transaction Safety**
-- **Multi-step Validation**: Address format, compliance, and balance checks
-- **Confirmation Dialogs**: Clear transaction details before execution  
-- **Error Handling**: Graceful failure management with user feedback
-- **Fee Transparency**: Network fee estimation and display
-
-### **Compliance Framework**
-- **KYC Integration**: Verification status tracking
-- **Jurisdiction Compliance**: Location-based transfer restrictions
-- **Whitelist Management**: Automated address verification
-- **Audit Trail**: Transaction history and compliance logs
-
-## 🚧 Development Roadmap
+## 🔧 Development Roadmap
 
 ### **Phase 2: Enhanced Trading** (Planned)
 - [ ] Asset marketplace with filtering and search
@@ -279,36 +223,47 @@ interface ComplianceData {
 }
 ```
 
+## 🛠️ Development
+
+### Environment Setup
+```env
+NEXT_PUBLIC_STELLAR_NETWORK=testnet
+NEXT_PUBLIC_CONTRACT_ID=[your-contract-id]
+```
+
+### Build for Production
+```bash
+npm run build
+npm start
+```
+
+### Testing
+```bash
+npm run test
+```
+
 ## 🤝 Contributing
 
-1. **Fork the repository**
-2. **Create feature branch**: `git checkout -b feature/amazing-feature`
-3. **Make changes**: Follow the existing code style and patterns
-4. **Test thoroughly**: Ensure no regressions  
-5. **Submit PR**: Include clear description of changes
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
 
-### **Code Style**
-- **TypeScript**: Strict mode with comprehensive type definitions
-- **Components**: Functional components with proper prop typing
-- **Styling**: Tailwind CSS with shadcn/ui component patterns
-- **State**: Zustand stores with typed interfaces
+## 📝 License
 
-## 📄 License
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
+## 🌊 About NauticX
 
-## 🆘 Support
+NauticX is revolutionizing yacht ownership and investment through blockchain technology. Our platform makes luxury yacht investment accessible, transparent, and efficient for both yacht owners and investors globally.
 
-### **Common Issues**
-- **Wallet Connection**: Ensure Freighter extension is installed and enabled
-- **Network Issues**: Check Stellar Testnet status and connectivity
-- **Build Warnings**: Stellar SDK warnings are expected in web environments
+## 📞 Support
 
-### **Resources**
-- [Stellar Documentation](https://developers.stellar.org/)
-- [Freighter Wallet](https://freighter.app/)
-- [shadcn/ui Components](https://ui.shadcn.com/)
-- [Next.js Documentation](https://nextjs.org/docs)
+For support and inquiries:
+- Email: support@nauticx.com
+- Discord: [NauticX Community]
+- Twitter: @NauticX
 
 ---
 

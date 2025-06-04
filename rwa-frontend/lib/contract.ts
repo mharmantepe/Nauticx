@@ -1,4 +1,4 @@
-import { AssetMetadata, ComplianceData, ContractInfo } from './types';
+import { AssetMetadata, ComplianceData, ContractInfo, YachtAsset } from './types';
 import { RWA_CONTRACT_ID, createSorobanServer, parseContractError } from './stellar';
 
 // Contract method signatures
@@ -343,4 +343,38 @@ export const batchWhitelistAddresses = async (
   }
 
   return { success, failed };
-}; 
+};
+
+// Mock data for NauticX yachts
+export const mockYachts: YachtAsset[] = [
+  {
+    id: 'yacht-001',
+    name: 'Sunseeker 88 Yacht',
+    symbol: 'SSK88',
+    assetType: 'Luxury Yacht',
+    location: 'Monaco',
+    specs: {
+      length: 88,
+      cabins: 5,
+      yearBuilt: 2026,
+      certification: 'RINA'
+    },
+    financial: {
+      pricePerToken: 1000,
+      totalSupply: 1000,
+      soldTokens: 450,
+      fundingGoal: 1000000
+    },
+    creator: {
+      name: 'BlueWave Yachting',
+      location: 'Monaco',
+      experience: 15,
+      certifications: ['RINA', 'MCA']
+    },
+    documents: {
+      ownership: ['deed.pdf'],
+      certificates: ['rina-cert.pdf', 'safety-cert.pdf'],
+      insurance: ['insurance-policy.pdf']
+    }
+  }
+]

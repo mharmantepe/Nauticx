@@ -265,4 +265,38 @@ export interface FinancialsFormData {
   managementFee: string;
   distributionFrequency: 'monthly' | 'quarterly' | 'annually';
   estimatedAppreciation: string;
-} 
+}
+
+export type YachtAssetType = 'Luxury Yacht' | 'Marina Berth' | 'Charter Income' | 'Refit Project'
+export type YachtCertification = 'RINA' | 'MCA' | 'CE' | 'ISO'
+
+export interface YachtAsset {
+  id: string
+  name: string
+  symbol: string
+  assetType: YachtAssetType
+  location: string
+  specs: {
+    length: number
+    cabins: number
+    yearBuilt: number
+    certification: YachtCertification
+  }
+  financial: {
+    pricePerToken: number
+    totalSupply: number
+    soldTokens: number
+    fundingGoal: number
+  }
+  creator: {
+    name: string
+    location: string
+    experience: number
+    certifications: YachtCertification[]
+  }
+  documents: {
+    ownership: string[]
+    certificates: string[]
+    insurance: string[]
+  }
+}

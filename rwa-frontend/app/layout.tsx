@@ -14,8 +14,11 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "RWA Investor - Real World Asset Platform",
-  description: "Access tokenized real estate, commodities, and other physical assets through compliant blockchain technology on Stellar.",
+  title: 'NauticX - Yacht Investment Marketplace',
+  description: 'Tokenized luxury yachts, marina berths, and charter income for global investors.',
+  icons: {
+    icon: '/yacht.ico',
+  }
 };
 
 export default function RootLayout({

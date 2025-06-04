@@ -112,6 +112,20 @@
   --sidebar-ring: oklch(0.551 0.027 264.364);
 }
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --primary: 222 96% 15%;      /* Lacivert - #0a2342 */
+    --secondary: 51 100% 50%;    /* Altın - #ffd700 */
+    --accent: 0 0% 100%;         /* Beyaz - #ffffff */
+    --background: 210 43% 97%;   /* Açık mavi-beyaz - #f4f8fb */
+    --foreground: 0 0% 10%;      /* Koyu gri - #1a1a1a */
+  }
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;
