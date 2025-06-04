@@ -52,6 +52,31 @@ npm run build
 npm start
 ```
 
+## 🔐 Environment Setup
+
+Create a `.env` file in the root directory:
+
+```env
+# Stellar Network Configuration
+NEXT_PUBLIC_STELLAR_NETWORK=testnet  # or mainnet for production
+
+# Contract Configuration
+NEXT_PUBLIC_CONTRACT_ID=your_contract_id
+
+# Important: Never commit these values
+STELLAR_SECRET_KEY=your_secret_key  # Keep this secure
+STELLAR_PUBLIC_KEY=your_public_key
+```
+
+### Security Notes
+- Never commit your `.env` file
+- Keep your Secret Key secure and private
+- Use different keys for testnet and mainnet
+- Backup your keys securely offline
+- Add `.env` to your `.gitignore`
+
+For testing, you can generate new keys using [Stellar Laboratory](https://laboratory.stellar.org/)
+
 ## 🏗️ Project Structure
 
 ```
