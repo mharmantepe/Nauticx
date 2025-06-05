@@ -77,6 +77,47 @@ STELLAR_PUBLIC_KEY=your_public_key
 
 For testing, you can generate new keys using [Stellar Laboratory](https://laboratory.stellar.org/)
 
+## 🔑 Deployment Configuration
+
+### Contract Deployment Keys
+
+#### Testnet Configuration
+```bash
+# Admin Account (Alice)
+Public Key: GCTP7ZZ24SO4UEEJUMLNPMNWKN4LQNVEQOEJFXURWRXD4W4ZHXBQPIGP
+Secret Key: SDVV4NVKHR2OEHQRK5TWQW3KDMTZYRNICW6XP33P5LGPGBPI3YQMJ3XP
+
+# Deployed Contract
+Contract ID: CCEMOQYVJZ5E5ZR4VYMK4KVCNQ6WSHZVK7SL2UFYHUSP
+```
+
+### Environment Setup
+Create a `.env` file with these values:
+
+```env
+# Stellar Network Configuration
+NEXT_PUBLIC_STELLAR_NETWORK=testnet
+
+# Contract Configuration
+NEXT_PUBLIC_CONTRACT_ID=CCEMOQYVJZ5E5ZR4VYMK4KVCNQ6WSHZVK7SL2UFYHUSP
+
+# Admin Account (Keep secure!)
+STELLAR_PUBLIC_KEY=GCTP7ZZ24SO4UEEJUMLNPMNWKN4LQNVEQOEJFXURWRXD4W4ZHXBQPIGP
+STELLAR_SECRET_KEY=SDVV4NVKHR2OEHQRK5TWQW3KDMTZYRNICW6XP33P5LGPGBPI3YQMJ3XP
+```
+
+### Security Reminders
+- Never commit the `.env` file
+- Keep the Secret Key secure and private
+- Use separate keys for testnet and mainnet
+- Store backups securely offline
+- Add `.env` to `.gitignore`
+
+### Testing
+```bash
+npm run test
+```
+
 ## 🏗️ Project Structure
 
 ```
@@ -260,11 +301,6 @@ NEXT_PUBLIC_CONTRACT_ID=[your-contract-id]
 ```bash
 npm run build
 npm start
-```
-
-### Testing
-```bash
-npm run test
 ```
 
 ## 🤝 Contributing

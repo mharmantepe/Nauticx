@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-# Nauticx
-=======
 # 🏢 RWA Investment Platform
 
 A professional Real World Asset (RWA) tokenization and investment platform built on the Stellar blockchain. This platform enables investors to discover, invest in, and trade tokenized real world assets including real estate, commodities, and infrastructure projects.
@@ -412,11 +409,42 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 ---
 
+# RWA Deployment Keys
+
+## 🔑 Contract Deployment Keys
+
+### Testnet Keys
+```bash
+# Alice's Keys (Admin)
+Public Key: GCTP7ZZ24SO4UEEJUMLNPMNWKN4LQNVEQOEJFXURWRXD4W4ZHXBQPIGP
+Secret Key: SDVV4NVKHR2OEHQRK5TWQW3KDMTZYRNICW6XP33P5LGPGBPI3YQMJ3XP
+
+# Contract ID
+Contract ID: CCEMOQYVJZ5E5ZR4VYMK4UYVQIUQHTX4KVCNQ6WSHZVK7SL2UFYHUSP
+```
+
+### Usage
+1. Store these securely and never commit to version control
+2. Add to `.env` file:
+   ```env
+   NEXT_PUBLIC_CONTRACT_ID=CCEMOQYVJZ5E5ZR4VYMK4KVCNQ6WSHZVK7SL2UFYHUSP
+   STELLAR_PUBLIC_KEY=GCTP7ZZ24SO4UEEJUMLNPMNWKN4LQNVEQOEJFXURWRXD4W4ZHXBQPIGP
+   STELLAR_SECRET_KEY=SDVV4NVKHR2OEHQRK5TWQW3KDMTZYRNICW6XP33P5LGPGBPI3YQMJ3XP
+   ```
+
+### Security Notes
+- Keep Secret Key secure and private
+- Use different keys for testnet and mainnet
+- Backup keys securely offline
+- Never share Secret Key
+- Add `.env` to `.gitignore`
+
+---
+
 <div align="center">
 
 **Built with ❤️ for the future of tokenized real world assets**
 
 [Website](link) • [Documentation](link) • [Discord](link) • [Twitter](link)
 
-</div> 
->>>>>>> 8ecb7c0 (Add comprehensive README for RWA Investment Platform)
+</div>
